@@ -9,7 +9,7 @@
 .main-logo {
     height: 50px;
     width: 50px;
-    background-image:url("/bg/logoskul.png");
+    background-image: url("/bg/logoskul.png");
     background-position: center;
     background-size: cover;
     border-radius: 50%;
@@ -26,49 +26,11 @@ nav>a {
     color: black;
 }
 
-/* .banner-img {
-    background-image:url("/bg/skula.jpg");
+nav>a {
+    padding: 8px;
     border: 1px solid;
-    height: 578px;
-    width: 1366px;
-} */
-
-.m-slider { 
-	border: 10px solid #efefef; 
-	position:relative;
-	overflow: hidden; 
-	background: #efefef;
-    margin:20px auto;
-	width: 976px;
-	height: 768px;
-}
-.isi-slider img { 
-	width:700px;
-	height: 1000px; 
-	float:inline-start;
-}
-
-.isi-slider { 
-	position: absolute; 
-	width:3900px;  
- 
-	/*pengaturan durasi lama tampil gambar bisa di atur di bawah ini*/
-	animation-name:slider;
-	animation-duration:5s;
-	animation-timing-function: ease-in-out;
-	animation-iteration-count:infinite;
-	-webkit-animation-name:slider;
-	-webkit-animation-duration:5s;
-	-webkit-animation-timing-function: ease-in-out;
-	-webkit-animation-iteration-count:infinite;
-	-moz-animation-name:slider;
-	-moz-animation-duration:5s;
-	-moz-animation-timing-function: ease-in-out;
-	-moz-animation-iteration-count:infinite;
-	-o-animation-name:slider;
-	-o-animation-duration:5s;
-	-o-animation-timing-function: ease-in-out;
-	-o-animation-iteration-count:infinite;
+    text-decoration: none;
+    color: black;
 }
 
 .card {
@@ -78,198 +40,72 @@ nav>a {
 	margin-top: 20px;
 }
  
-/*saat gambar di hover oleh cursor mouse maka berhenti slide*/
-.isi-slider:hover { 
-	-webkit-animation-play-state:paused; 
-	-moz-animation-play-state:paused; 
-	-o-animation-play-state:paused; 
-	animation-play-state:paused; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
- 
-.isi-slider img { 
-	float: right; 
+.slider {
+    width: 100%;
+    max-width: 1366px; /* Sesuaikan ukuran */
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid #333;
 }
- 
-.m-slider:after { 
-	font-size: 150px; 
-	position: absolute; 
-	z-index: 12; 
-	color: rgba(255,255,255, 0); 
-	left: 300px; top: 80px; 
-	-webkit-transition: 1s all ease-in-out; 
-	-moz-transition: 1s all ease-in-out; 
-	transition: 1s all ease-in-out; 
+
+.slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    animation: slideAnimation 30s infinite;
 }
- 
-.m-slider:hover:after { 
-	color: rgba(255,255,255, 0.6);  
+
+.slide {
+    width: fit-content;
+    height: 100%;
+    object-fit: cover;
+    padding: 5px;
 }
- 
- 
- 
-@-moz-keyframes slider {     
-	0% {
-		left: 0; opacity: 0; 
-	}     
-	2% {
-		opacity: 1; 
-	}     
-	20% {
-		left: 0; opacity: 1; 
-	}     
-	21% {
-		opacity: 0; 
-	}     
-	24% {
-		opacity: 0; 
-	}     
-	25% {
-		left: -768px; opacity: 1; 
-	}       
-	45% {
-		left: -768px; opacity: 1; 
-	}     
-	46% {
-		opacity: 0; 
-	}     
-	48% {
-		opacity: 0; 
-	}     
-	50% {
-		left: -1536px; opacity: 1; 
-	}     
-	70% {
-		left: -1536px; opacity: 1; 
-	}     
-	72% {
-		opacity: 0; 
-	}     
-	74% {
-		opacity: 0; 
-	}    
-	75% {
-		left: -2304px; opacity: 1; 
-	}   	
-	95% {
-		left: -2304px; opacity: 1; 
-	}   	
-	97% { 
-		left: -2304px; opacity: 0;
-	}   	
-	100% {
-		left: 0; opacity: 0; 
-	}
-} 
- 
-@-webkit-keyframes slider {     
-	0% {
-		left: 0; opacity: 0; 
-	}     
-	2% {
-		opacity: 1; 
-	}     
-	20% {
-		left: 0; opacity: 1; 
-	}     
-	21% {
-		opacity: 0; 
-	}     
-	24% {
-		opacity: 0; 
-	}     
-	25% {
-		left: -768px; opacity: 1; 
-	}       
-	45% {
-		left: -768px; opacity: 1; 
-	}     
-	46% {
-		opacity: 0; 
-	}     
-	48% {
-		opacity: 0; 
-	}     
-	50% {
-		left: -1536px; opacity: 1; 
-	}     
-	70% {
-		left: -1536px; opacity: 1; 
-	}     
-	72% {
-		opacity: 0; 
-	}     
-	74% {
-		opacity: 0; 
-	}    
-	75% {
-		left: -2304px; opacity: 1; 
-	}   	
-	95% {
-		left: -2304px; opacity: 1; 
-	}   	
-	97% { 
-		left: -2304px; opacity: 0;
-	}   	
-	100% {
-		left: 0; opacity: 0; 
-	}
-} 
- 
- 
-@keyframes slider {     
-	0% {
-		left: 0; opacity: 0; 
-	}     
-	2% {
-		opacity: 1; 
-	}     
-	20% {
-		left: 0; opacity: 1; 
-	}     
-	21% {
-		opacity: 0; 
-	}     
-	24% {
-		opacity: 0; 
-	}     
-	25% {
-		left: -768px; opacity: 1; 
-	}     
-	45% {
-		left: -768px; opacity: 1; 
-	}     
-	46% {
-		opacity: 0; 
-	}     
-	48% {
-		opacity: 0; 
-	}     
-	50% {
-		left: -1536px; opacity: 1; 
-	}     
-	70% {
-		left: -1536px; opacity: 1; 
-	}     
-	72% {
-		opacity: 0; 
-	}     
-	74% {
-		opacity: 0; 
-	}    
-	75% {
-		left: -2304px; opacity: 1; 
-	}   	
-	95% {
-		left: -2304px; opacity: 1; 
-	}   	
-	97% { 
-		left: -2304px; opacity: 0; 
-	} 
- 
-	100% {
-		left: 0; opacity: 0; 
-	}
+
+@keyframes slideAnimation {
+    0% { transform: translateX(0%); }
+    10% { transform: translateX(-50%); }
+    20% { transform: translateX(-20%); }
+    30% { transform: translateX(-10%); }
+    40% { transform: translateX(-20%); }
+    50% { transform: translateX(-10%); }
+    60% { transform: translateX(-20%); }
+    70% { transform: translateX(-10%); }
+    80% { transform: translateX(-20%); }
+    90% { transform: translateX(-100%); }
+    100% { transform: translateX(0%); }
 }
+
+/* Indicator dots */
+.indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background-color: gray;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.indicator.active {
+    background-color: white;
+}
+
 
 .our-profile-content {
     border: 1px solid;
