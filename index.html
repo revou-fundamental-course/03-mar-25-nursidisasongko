@@ -29,7 +29,7 @@
         <!-- Home Content -->
         <section id="home">
             <header>
-                <h1>Hi User, Selamat Datang di Website SMK Negeri Maju Jaya</h1>
+                <h1 id="welcome-message">Hi ,Selamat Datang di Website SMK Negeri Maju Jaya</h1>
                 <p>Anda bisa melihat profil kami,pencapaian serta kontak</p>
             </header>
 
@@ -82,9 +82,41 @@
                 <h1>Message Us</h1>
             </header>
 
-            <!-- Message Us Content -->
-            <div class="message-us-content">
-                <p>Lorem Ipsum Dolor Sit Amet Adipiscing...</p>
+            <div class="container">
+                <!-- Form Input -->
+                <div class="message-us-content">
+                    <form id="message-form">
+                        <label for="full-name">Nama:</label>
+                        <input placeholder="Nama" type="text" id="full-name" name="full-name" required/>
+                        
+                        <label for="birth-date">Tanggal lahir:</label>
+                        <input type="date" id="birth-date" name="birth-date" required/>
+                        
+                        <label>Jenis Kelamin:</label><br>
+                        <input type="radio" id="male" name="gender" value="Laki-laki" required/>
+                        <label for="male">Laki-Laki</label>
+            
+                        <input type="radio" id="female" name="gender" value="Perempuan"/>
+                        <label for="female">Perempuan</label>
+                        <br>
+            
+                        <label for="pesan">Pesan:</label>
+                        <textarea name="pesan" id="pesan" required>Silakan masukkan pesan Anda</textarea>
+                        
+                        <br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            
+                <!-- Output Data -->
+                <div class="output-container" id="output">
+                    <h3>Data yang Dikirim:</h3>
+                    <p><strong>Connection:</strong> <span id="timestamp"></span></p>
+                    <p><strong>Nama:</strong> <span id="output-nama"></span></p>
+                    <p><strong>Tanggal Lahir:</strong> <span id="output-tanggal"></span></p>
+                    <p><strong>Jenis Kelamin:</strong> <span id="output-gender"></span></p>
+                    <p><strong>Pesan:</strong> <span id="output-pesan"></span></p>
+                </div>
             </div>
         </section>
     </main>
