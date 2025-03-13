@@ -1,31 +1,44 @@
-var slideIndex = 1;
-showDivs(slideIndex);
+
+let slideIndex = 0;
+let slides = document.querySelectorAll(".img-slideshow");
+let slideInterval;
+
+// Fungsi untuk menampilkan slide dengan animasi geser
+function showSlides(n) {
+    slides.forEach(slide => {
+        slide.classList.remove("active", "prev");
+        slide.style.display = "none"; // Sembunyikan semua slide
+    });
+
+    if (n !== undefined) {
+        slideIndex += n;
+        if (slideIndex >= slides.length) slideIndex = 0;
+        if (slideIndex < 0) slideIndex = slides.length - 1;
+    } else {
+        slideIndex = (slideIndex + 1) % slides.length;
+    }
+
+    let prevIndex = slideIndex - 1 < 0 ? slides.length - 1 : slideIndex - 1;
+    slides[prevIndex].classList.add("prev");
+    slides[slideIndex].classList.add("active");
+    slides[slideIndex].style.display = "block";
+}
 
 // Fungsi untuk tombol Next/Prev
 function plusDivs(n) {
-    showDivs(slideIndex += n);
+    clearInterval(slideInterval); // Reset timer saat tombol ditekan
+    showSlides(n);
+    startAutoSlide(); // Mulai ulang slideshow otomatis
 }
 
-// Fungsi untuk menampilkan slide
-function showDivs(n) {
-    var i;
-    var x = document.getElementsByClassName("img-slideshow");
-
-    if (n > x.length) {
-        slideIndex = 1;
-    }
-    if (n < 1) {
-        slideIndex = x.length;
-    }
-
-    // Sembunyikan semua gambar
-    for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-    }
-
-    // Tampilkan gambar yang sesuai
-    x[slideIndex - 1].style.display = "block";
+// Fungsi untuk menjalankan slideshow otomatis ke kiri
+function startAutoSlide() {
+    slideInterval = setInterval(() => showSlides(1), 3000);
 }
+
+// Jalankan slideshow otomatis saat halaman dimuat
+showSlides();
+startAutoSlide();
 
 
 document.getElementById("message-form").addEventListener("submit", function(event) {
@@ -55,7 +68,8 @@ document.getElementById("message-form").addEventListener("submit", function(even
     document.getElementById("output").style.display = "block";
 
     // Mengubah teks heading dengan pesan selamat datang
-    document.getElementById("welcome-message").innerHTML = `Hai ${nama}, Selamat Datang di Website SMK Negeri Maju Jaya!`;
+    document.getElementById("welcome-message").innerHTML = 
+    `Hai <span style="color:rgb(148, 17, 8); font-size: 50px; font-weight: bold;">${nama}</span>, Selamat Datang di Website SMK Negeri Maju Jaya!`;
 
     // Mengosongkan form setelah submit
     document.getElementById("message-form").reset();

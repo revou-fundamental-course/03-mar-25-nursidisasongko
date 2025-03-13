@@ -29,23 +29,32 @@
         <!-- Home Content -->
         <section id="home">
             <header>
-                <h1 id="welcome-message">Hi ,Selamat Datang di Website SMK Negeri Maju Jaya</h1>
-                <p>Anda bisa melihat profil kami,visi misi serta hubungi kami</p>
+                <h1 id="welcome-message">Hi <span id="username">User</span>,Selamat Datang <br> di Website SMK Negeri Maju Jaya</h1>
+                <h2>Anda bisa melihat profil kami,visi misi serta hubungi kami</h2>
             </header>
 
             <!-- Banner Autoslide -->
-            <div>
+            <div class="slideshow-container">
                 <img class="img-slideshow" src="/bg/1.jpg"/>
                 <img class="img-slideshow" src="/bg/2.jpeg"/>
                 <img class="img-slideshow" src="/bg/3.jpg"/>
                 <img class="img-slideshow" src="/bg/4.jpg"/>
                 <img class="img-slideshow" src="/bg/5.jpg"/>
-                <div class="btn-slide">
+            </div>
+                <!-- Tombol di bawah gambar -->
+                <div class="controls">
                     <button  onclick="plusDivs(-1)">Previous</button>
+                    <div class="dots">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span>
+                        <span class="dot" onclick="currentSlide(5)"></span>
+                    </div>
                     <button  onclick="plusDivs(1)">Next</button>
                 </div>
                 
-            </div>
+            
 
         <hr />
 
