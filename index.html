@@ -17,8 +17,8 @@
         <nav>
             <a href="#home">Home</a>
             <a href="#our-profile">Our Profile</a>
-            <a href="#achievement">Achievement</a>
-            <a href="#message-us">Message Us</a>
+            <a href="#visimisi">Visi Misi</a>
+            <a href="#hubungi-kami">Hubungi Kami</a>
         </nav>
     </header>
 
@@ -30,20 +30,22 @@
         <section id="home">
             <header>
                 <h1 id="welcome-message">Hi ,Selamat Datang di Website SMK Negeri Maju Jaya</h1>
-                <p>Anda bisa melihat profil kami,pencapaian serta kontak</p>
+                <p>Anda bisa melihat profil kami,visi misi serta hubungi kami</p>
             </header>
 
             <!-- Banner Autoslide -->
-            <div class="slider">
-                <div class="slides">
-                    <img src="bg\1.jpg" class="slide">
-                    <img src="bg\2.jpeg" class="slide">
-                    <img src="bg\3.jpg" class="slide">
-                    <img src="bg\4.jpg" class="slide">
-                    <img src="bg\5.jpg" class="slide">
+            <div>
+                <img class="img-slideshow" src="/bg/1.jpg"/>
+                <img class="img-slideshow" src="/bg/2.jpeg"/>
+                <img class="img-slideshow" src="/bg/3.jpg"/>
+                <img class="img-slideshow" src="/bg/4.jpg"/>
+                <img class="img-slideshow" src="/bg/5.jpg"/>
+                <div class="btn-slide">
+                    <button  onclick="plusDivs(-1)">Previous</button>
+                    <button  onclick="plusDivs(1)">Next</button>
                 </div>
+                
             </div>
-        </section>
 
         <hr />
 
@@ -64,44 +66,64 @@
             </div>
         </section>
 
-        <!-- Achievement Content -->
-        <section id="achievement">
+        <!-- Visi Misi Content -->
+        <section id="visimisi">
             <header>
-                <h1>Achievement</h1>
+                <h1>Visi Misi</h1>
             </header>
 
             <!-- achievement Content -->
-            <div class="achievement-content">
-                <p>Lorem Ipsum Dolor Sit Amet Adipiscing...</p>
+            <div class="visimisi-content">
+                <p>Visi:
+                    <br>
+                    “Menjadi Sekolah Menengah Kejuruan yang unggul, inovatif, dan berdaya saing global dalam mencetak lulusan yang kompeten, berkarakter, serta siap menghadapi tantangan dunia industri dan wirausaha.”  <br>
+                 <br>   
+                    Misi:
+                    <br>
+                    1. Menyelenggarakan pendidikan berkualitas yang berbasis teknologi dan kebutuhan industri. <br>
+                    2. Meningkatkan kompetensi lulusan melalui sertifikasi keahlian dan pengalaman kerja. <br>
+                    3. Membangun karakter siswa yang disiplin, berintegritas, dan berjiwa wirausaha. <br>
+                    4. Menjalin kemitraan dengan dunia usaha dan industri untuk meningkatkan daya saing lulusan. <br>
+                    5. Mengembangkan inovasi dan kreativitas dalam proses pembelajaran berbasis teknologi. <br>
+                    6. Menerapkan pendidikan berbasis lingkungan untuk menciptakan sekolah yang hijau dan berkelanjutan. <br>
+                    7. Mendorong penggunaan teknologi digital dalam kegiatan belajar mengajar.</p>
             </div>
         </section>
 
         <!-- Message Us Content -->
-        <section id="message-us">
+        <section id="hubungi-kami">
             <header>
-                <h1>Message Us</h1>
+                <h1>Hubungi Kami</h1>
             </header>
 
             <div class="container">
                 <!-- Form Input -->
-                <div class="message-us-content">
+                <div class="form-container form-group">
                     <form id="message-form">
                         <label for="full-name">Nama:</label>
                         <input placeholder="Nama" type="text" id="full-name" name="full-name" required/>
+                
+                        <label for="full-name">Alamat:</label>
+                        <input placeholder="Alamat" type="text" id="alamat" name="alamat" required/>
+
+                        <label for="no-wa">Nomor WA</label>
+                        <input placeholder="Nomor WA" type="tel" id="no-wa" name="no-wa" required/>
+                        <small id="phone-error" style="color: red; display: none;">Nomor HP harus berisi 10-13 digit!</small>
                         
                         <label for="birth-date">Tanggal lahir:</label>
                         <input type="date" id="birth-date" name="birth-date" required/>
                         
-                        <label>Jenis Kelamin:</label><br>
-                        <input type="radio" id="male" name="gender" value="Laki-laki" required/>
-                        <label for="male">Laki-Laki</label>
-            
-                        <input type="radio" id="female" name="gender" value="Perempuan"/>
-                        <label for="female">Perempuan</label>
-                        <br>
-            
+                        <div class="form-group radio-group">
+                        <label>Jenis Kelamin:</label>
+                        <div class="radio-options"><input type="radio" id="male" name="gender" value="Laki-laki" required/>
+                            <label for="male">Laki-Laki</label>
+                            <input type="radio" id="female" name="gender" value="Perempuan"/>
+                            <label for="female">Perempuan</label>
+                        </div>
+                        </div>
+                    <p>
                         <label for="pesan">Pesan:</label>
-                        <textarea name="pesan" id="pesan" required>Silakan masukkan pesan Anda</textarea>
+                        <textarea name="pesan" id="pesan" required></textarea>
                         
                         <br>
                         <input type="submit" value="Submit">
@@ -109,20 +131,23 @@
                 </div>
             
                 <!-- Output Data -->
-                <div class="output-container" id="output">
+                <div class="data-container" id="output">
                     <h3>Data yang Dikirim:</h3>
                     <p><strong>Connection:</strong> <span id="timestamp"></span></p>
                     <p><strong>Nama:</strong> <span id="output-nama"></span></p>
+                    <p><strong>Alamat:</strong> <span id="output-alamat"></span></p>
+                    <p><strong>Nomor WA:</strong> <span id="output-nowa"></span></p>
                     <p><strong>Tanggal Lahir:</strong> <span id="output-tanggal"></span></p>
-                    <p><strong>Jenis Kelamin:</strong> <span id="output-gender"></span></p>
+                    <strong>Jenis Kelamin:</strong> <span id="output-gender"></span>
                     <p><strong>Pesan:</strong> <span id="output-pesan"></span></p>
                 </div>
             </div>
         </section>
     </main>
     <!-- Main Footer -->
+     <br>
     <footer>
-        <p>&copy; 2021 SMK Negeri Maju Jaya</p>
+        <p>&copy; 2025 SMK Negeri Maju Jaya</p>
     </footer>
     <script src="js/script.js"></script>
 </body>

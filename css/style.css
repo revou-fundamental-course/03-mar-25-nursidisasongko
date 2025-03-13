@@ -1,4 +1,11 @@
 /* Ini file css */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4ff; /* Latar belakang biru muda */
+    margin: 0;
+    padding: 20px;
+}
+
 
 .main-header {
     display: flex;
@@ -6,7 +13,45 @@
     align-items: center;
 }
 
+header {
+    background: linear-gradient(135deg, #007bff, #00d4ff); /* Gradasi warna biru */
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+header p {
+    font-size: 18px; /* Sedikit lebih besar untuk deskripsi */
+    font-weight: 300; /* Font lebih tipis untuk tampilan elegan */
+    opacity: 0.9;
+    margin-top: 5px;
+}
+
 #welcome-message {
+    font-size: 60px; /* Ukuran lebih besar untuk teks utama */
+    font-weight: 600; /* Tebal agar menonjol */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px; /* Spasi antar huruf */
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+h1 {
+    margin-top: 5px; /* Tambahkan margin atas jika perlu */
+    margin-bottom: 5px;
+    text-align: center;
+    color: #2c3e50;
+}
+
+#welcome-message {
+    position: relative;
     margin-top: 100px; /* Sesuaikan dengan tinggi header & slider */
     text-align: center;
     font-size: 24px;
@@ -52,84 +97,39 @@ nav>a {
     box-sizing: border-box;
 }
 
-/* Wrapper Slider */
-.slider {
-    width: 100%;
-    max-width: 1200px; /* Maksimum ukuran slider */
-    height: 400px;
-    overflow: hidden;
-    position: relative;
-    margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.img-slideshow {
+    height: 800px;
+    width: 1220px;
 }
 
-/* Container Slides */
-.slides {
+.btn-slide {
     display: flex;
-    width: 500%; /* Karena ada 5 gambar */
-    height: 100%;
-    transition: transform 40s ease-in-out;
-}
-
-/* Gambar di dalam Slider */
-.slide {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    padding: 5px;
-}
-
-/* Indikator Titik */
-.dots {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 8px;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.dot.active {
-    background-color: white;
-}
-
-/* ✅ Media Query: Agar slider tetap rapi di mobile */
-@media screen and (max-width: 768px) {
-    .slider {
-        max-width: 90%;
-        height: 250px;
-    }
-
-    .dot {
-        width: 10px;
-        height: 10px;
-    }
+    justify-content: center;
+    gap: 10px; /* Jarak antara tombol */
+    margin-top: 5px; /* Tambahkan margin atas jika perlu */
+    margin-bottom: 5px;
 }
 
 .our-profile-content {
-    border: 1px solid;
-    height: 500px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size:larger;
-    align-content: center;
-    text-align: justify;
+    text-align: left;
+    font-size: 18px;
+    font-style: italic;
+    color: #34495e;
+    padding: 10px;
+    background: #ecf0f1;
+    border-left: 5px solid #3498db;
+    border-radius: 5px;
 }
 
-.achievement-content {
-    border: 1px solid;
-    height: 500px;
-    align-content: center;
-    text-align: center;
+.visimisi-content {
+    text-align: left;
+    font-size: 18px;
+    font-style: italic;
+    color: #34495e;
+    padding: 10px;
+    background: #ecf0f1;
+    border-left: 5px solid #3498db;
+    border-radius: 5px;
 }
 
 .message-us-content {
@@ -137,6 +137,7 @@ nav>a {
     margin: 20px auto;
     font-family: Arial, sans-serif;
 }
+
 
 form {
     background: #f9f9f9;
@@ -236,12 +237,140 @@ input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-.output-container {
-    display: none; /* Disembunyikan hingga form di-submit */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px; /* Jarak antar form dan hasil data */
+    width: 100%;
+    max-width: 900px; /* Maksimal lebar container */
+    margin: auto; /* Pusatkan container */
 }
 
-.output-container h3 {
-    margin-top: 0;
+.form-container, .data-container {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Membuat kedua elemen memiliki lebar yang sama */
+    min-width: 400px; /* Lebar minimum agar tidak terlalu kecil */
+}
+
+.form-container {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Jarak antar elemen form */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-group.radio-group {
+    display: flex;
+    align-items:flex-start;
+    justify-content: space-between; /* Menjadikan radio button di sebelah kanan */
+}
+
+.radio-group label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+.radio-options {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Beri jarak antar pilihan */
+    margin-left: 20px;
+}
+
+.radio-options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+/* Hide default radio button */
+.radio-options input[type="radio"] {
+    display: none;
+}
+
+/* Custom radio button */
+.radio-options label::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #007bff;
+    display: inline-block;
+    transition: 0.3s;
+    position: relative;
+}
+
+/* Efek saat radio button dipilih */
+.radio-options input[type="radio"]:checked + label::before {
+    background-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+    border: 4px solid white;
+    outline: 2px solid #007bff;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+.form-group textarea {
+    resize: none;
+    height: 100px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: #0056b3;
 }
 
 /* ✅ Media Query untuk Mobile */
@@ -253,6 +382,9 @@ input[type="submit"]:hover {
 
     h1 {
         font-size: 20px; /* Ukuran font lebih kecil */
+        position: relative;  /* Pastikan tidak absolute */
+        margin-top: 1000px;    /* Beri jarak dari atas */
+        text-align: center;  /* Agar tetap rapi */
     }
 
     input[type="text"], 
@@ -324,7 +456,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(228, 189, 17, 0.884);
     border-radius: 5px;
 }
 
@@ -364,4 +496,59 @@ nav a:hover {
         font-size: 13px;
         padding: 10px;
     }
+}
+
+
+/* Media Query untuk tampilan mobile */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .form {
+        width: 100%; /* Agar form memenuhi lebar layar */
+    }
+}
+
+.data-container {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+    border-left: 5px solid #007bff; /* Garis aksen di kiri */
+    transition: 0.3s ease-in-out;
+}
+
+.data-container:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.data-container h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #010c18;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.data-container p {
+    font-size: 16px;
+    color: #333;
+    margin: 8px 0;
+}
+
+.data-container strong {
+    color: #020911;
+    font-weight: 600;
+}
+
+.data-container span {
+    color: #555;
+    font-weight: 500;
 }
