@@ -54,7 +54,7 @@ h1 {
 .main-logo {
     height: 50px;
     width: 50px;
-    background-image: url("/bg/logoskul.png");
+    background-image: url("/assets/logoskul.png");
     background-position: center;
     background-size: cover;
     border-radius: 50%;
